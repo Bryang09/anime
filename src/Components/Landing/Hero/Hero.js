@@ -12,7 +12,7 @@ class Hero extends Component {
         className="Hero"
         style={
           this.state.fullScreen === false
-            ? { height: "80vh" }
+            ? { height: "40vh" }
             : { height: "100vh" }
         }
       >
