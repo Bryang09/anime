@@ -1,1 +1,1 @@
-export const Request = "https://api.jikan.moe/v3/";
+export const Request = "https://api.jikan.moe/v3";
