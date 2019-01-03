@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Request } from "../../../../Request";
 
 import "./ListingDisplay.scss";
 
@@ -31,11 +30,17 @@ const Display = props => {
                 )}
 
                 <div className="rating">
-                  <img src="https://img.icons8.com/color/50/fb7ea1/christmas-star.png" />
+                  <img
+                    src="https://img.icons8.com/color/50/fb7ea1/christmas-star.png"
+                    alt="icon"
+                  />
                   <h5>{res.score}</h5>
                 </div>
                 <div className="rating">
-                  <img src="https://img.icons8.com/ios/50/fb7ea1/like-filled.png" />
+                  <img
+                    src="https://img.icons8.com/ios/50/fb7ea1/like-filled.png"
+                    alt="icon"
+                  />
                   <h5>{res.members}</h5>
                 </div>
               </div>

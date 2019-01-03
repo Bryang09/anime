@@ -1,25 +1,50 @@
 import React, { Component } from "react";
 import { Request } from "../../Request";
 import axios from "axios";
+import Hero from "./Hero/Hero";
+import Episodes from "./Episodes/Episodes";
+
+import "./Anime.scss";
 
 class Anime extends Component {
   state = {
-    votes: [],
     watching: null,
     planWatch: null,
     completed: null,
     pictures: [],
     episodes1: [],
-    episodes2: []
+    episodes2: [],
+    trailer: "",
+    title: "",
+    episodes: "",
+    status: "",
+    rating: "",
+    rank: "",
+    fans: "",
+    synopsis: ""
   };
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     const id = this.props.match.params.id;
+    axios
+      .get(`${Request}/anime/${id}`)
+      .then(res =>
+        this.setState({
+          trailer: res.data.trailer_url,
+          title: res.data.title,
+          episodes: res.data.episodes,
+          status: res.data.status,
+          rating: res.data.rating,
+          rank: res.data.rank,
+          fans: res.data.members,
+          synopsis: res.data.synopsis
+        })
+      )
+      .catch(err => console.log(err));
     axios
       .get(`${Request}/anime/${id}/stats`)
       .then(res =>
         this.setState({
-          votes: res.data.scores,
           completed: res.data.completed,
           planWatch: res.data.plan_to_watch,
           watching: res.data.watching
@@ -54,11 +79,91 @@ class Anime extends Component {
   };
 
   render() {
+    const state = this.state;
     console.log(this.props);
+
+    const information = [
+      // prettier-ignore
+      {id: 0, icon: 'https://img.icons8.com/metro/50/fb7ea1/visible.png', text: state.watching, label: 'Watching'},
+      // prettier-ignore
+      {id: 7, icon: 'https://img.icons8.com/ios/50/fb7ea1/naruto-filled.png', text: state.fans, label: 'Fans'},
+      // prettier-ignore
+      {id: 2, icon: 'https://img.icons8.com/ios-glyphs/50/fb7ea1/ok.png', text: state.completed, label: 'Completed'},
+      // prettier-ignore
+      {id: 5, icon: 'https://img.icons8.com/ios/50/fb7ea1/rating-filled.png', text: state.rating, label: 'Rating' },
+
+      // prettier-ignore
+      {id: 3, icon: 'https://img.icons8.com/metro/50/fb7ea1/checklist.png', text: state.episodes, label: 'Episodes'},
+      // prettier-ignore
+      {id: 4, icon: 'https://img.icons8.com/ios/50/fb7ea1/tv-filled.png', text: state.status, label: 'Status' },
+
+      // prettier-ignore
+      {id: 1, icon: 'https://img.icons8.com/windows/50/fb7ea1/overtime.png', text: state.planWatch, label: 'Plan To Watch'},
+      // prettier-ignore
+      {id: 6, icon: 'https://img.icons8.com/ios/50/fb7ea1/leaderboard-filled.png', text: state.rank, label: 'Rank'}
+    ];
+
+    const episodes = this.state.episodes1.map(res => {
+      return (
+        <div className="episode" key={res.episode_id}>
+          <div className="imageContainer">
+            <div
+              className="img"
+              style={{
+                backgroundImage: `url(${this.state.pictures[1].small})`
+              }}
+            />
+          </div>
+
+          <div className="episodeText">
+            <div className="title">
+              <h3>
+                <a
+                  href={res.video_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {res.title}
+                </a>
+              </h3>
+            </div>
+            <div className="forum">
+              <h5>
+                <a
+                  href={res.forum_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit The Forum
+                </a>
+              </h5>
+            </div>
+          </div>
+        </div>
+      );
+    });
     console.log(this.state);
+
     return (
-      <div className="Anime">
-        <h1>Anime</h1>
+      <div className="Anime Container">
+        {this.state.pictures.length > 2 ? (
+          <Hero
+            info={information}
+            trailer={this.state.trailer}
+            title={this.state.title}
+            synopsis={this.state.synopsis}
+            pic={this.state.pictures}
+          />
+        ) : (
+          <Hero
+            info={information}
+            trailer={this.state.trailer}
+            title={this.state.title}
+            synopsis={this.state.synopsis}
+            pic={undefined}
+          />
+        )}
+        <Episodes episodes1={this.state.episodes1} episodes={episodes} />
       </div>
     );
   }

@@ -10,6 +10,7 @@ $pink: #fb7ea1;
   align-items: center;
   flex-direction: column;
   transition: 1s ease;
+  animation: hero 1s ease;
 
   h1 {
     color: #fff;
@@ -51,6 +52,15 @@ $pink: #fb7ea1;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes hero {
+  0% {
+    height: 100vh;
+  }
+  100% {
+    height: 40vh;
   }
 }
 

@@ -25,12 +25,11 @@ class Top extends Component {
   };
 
   render() {
-    console.log(this.props);
-    let cover = this.props.cover;
+    // let cover = this.props.cover;
     return (
       <div
         className="categoryContainer"
-        style={cover === false ? { display: "block" } : { display: "none" }}
+        // style={cover === false ? { display: "block" } : { display: "none" }}
       >
         <Zoom>
           <h2>Top Anime</h2>

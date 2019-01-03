@@ -7,17 +7,17 @@ class Hero extends Component {
     fullScreen: true
   };
   render() {
-    console.log(this.props);
-    let cover = this.props.cover;
-    let toggle = this.props.toggle;
+    // let cover = this.props.cover;
+    // let toggle = this.props.toggle;
 
     return (
       <div
         className="Hero"
-        style={cover === false ? { height: "40vh" } : { height: "100vh" }}
+        // style={cover === false ? { height: "40vh" } : { height: "100vh" }}
+        style={{ height: "40vh" }}
       >
         <h1>Welcome To Bryan's Anime Listings</h1>
-        <h3 onClick={toggle}>Discover Anime Now!</h3>
+        {/* <h3 onClick={toggle}>Discover Anime Now!</h3> */}
       </div>
     );
   }

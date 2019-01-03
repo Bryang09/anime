@@ -19,11 +19,11 @@ class Top extends Component {
   };
 
   render() {
-    let cover = this.props.cover;
+    // let cover = this.props.cover;
     return (
       <div
         className="categoryContainer"
-        style={cover === false ? { display: "block" } : { display: "none" }}
+        // style={cover === false ? { display: "block" } : { display: "none" }}
       >
         <Zoom>
           <h2>Top Manga</h2>
