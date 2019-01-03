@@ -6,7 +6,8 @@ import Zoom from "react-reveal/Zoom";
 
 class Top extends Component {
   state = {
-    top: []
+    top: [],
+    anime: false
   };
 
   componentDidMount = () => {
@@ -26,7 +27,7 @@ class Top extends Component {
       >
         <Zoom>
           <h2>Top Manga</h2>
-          <Display results={this.state.top} />
+          <Display results={this.state.top} anime={this.state.anime} />
         </Zoom>
       </div>
     );

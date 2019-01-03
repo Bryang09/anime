@@ -9,7 +9,7 @@ import "./Top.scss";
 class Top extends Component {
   state = {
     top: [],
-    overlay: false
+    anime: true
   };
 
   componentDidMount = () => {
@@ -34,7 +34,7 @@ class Top extends Component {
       >
         <Zoom>
           <h2>Top Anime</h2>
-          <Display results={this.state.top} />
+          <Display results={this.state.top} anime={this.state.anime} />
         </Zoom>
       </div>
     );

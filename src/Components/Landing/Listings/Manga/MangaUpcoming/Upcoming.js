@@ -6,7 +6,8 @@ import Zoom from "react-reveal/Zoom";
 
 class UpcomingManga extends Component {
   state = {
-    upcoming: []
+    upcoming: [],
+    anime: false
   };
 
   componentDidMount = () => {
@@ -26,7 +27,7 @@ class UpcomingManga extends Component {
       >
         <Zoom>
           <h2>Upcoming Manga</h2>
-          <Display results={this.state.upcoming} />
+          <Display results={this.state.upcoming} anime={this.state.anime} />
         </Zoom>
       </div>
     );
