@@ -65,6 +65,38 @@
     h3 a {
       color: #fff;
       font-weight: 300;
+      text-decoration: underline;
     }
   }
+}
+
+@media screen and (max-width: 1192px) {
+  .episode {
+    width: 75vw;
+  }
+}
+@media screen and (max-width: 992px) {
+  .episode {
+    width: 85vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .episode {
+    width: 85vw;
+
+    .episodeText {
+      flex-direction: column;
+
+      .forum {
+        width: 100%;
+      }
+      h3 {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
 }
