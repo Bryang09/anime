@@ -22,12 +22,7 @@ const Display = props => {
               className="listImage"
               style={{ backgroundImage: `url(${res.image_url})` }}
             >
-              <div
-                className="listText"
-                // style={
-                //   this.state.overlay ? { display: "flex" } : { display: "none" }
-                // }
-              >
+              <div className="listText">
                 <h3>{res.title}</h3>
                 {anime === false ? (
                   <h4>Chapters: {res.volumes} </h4>
