@@ -103,45 +103,6 @@ class Anime extends Component {
       {id: 6, icon: 'https://img.icons8.com/ios/50/fb7ea1/leaderboard-filled.png', text: state.rank, label: 'Rank'}
     ];
 
-    const episodes = this.state.episodes1.map(res => {
-      return (
-        <div className="episode" key={res.episode_id}>
-          <div className="imageContainer">
-            <div
-              className="img"
-              style={{
-                backgroundImage: `url(${this.state.pictures[1].small})`
-              }}
-            />
-          </div>
-
-          <div className="episodeText">
-            <div className="title">
-              <h3>
-                <a
-                  href={res.video_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {res.title}
-                </a>
-              </h3>
-            </div>
-            <div className="forum">
-              <h5>
-                <a
-                  href={res.forum_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visit The Forum
-                </a>
-              </h5>
-            </div>
-          </div>
-        </div>
-      );
-    });
     console.log(this.state);
 
     return (
@@ -163,7 +124,14 @@ class Anime extends Component {
             pic={undefined}
           />
         )}
-        <Episodes episodes1={this.state.episodes1} episodes={episodes} />
+        {this.state.pictures.length > 2 ? (
+          <Episodes
+            episodes1={this.state.episodes1}
+            pic={this.state.pictures}
+          />
+        ) : (
+          <Episodes episodes1={this.state.episodes1} pic={undefined} />
+        )}
       </div>
     );
   }
