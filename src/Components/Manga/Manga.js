@@ -5,6 +5,7 @@ import { Request } from "../../Request";
 
 import Hero from "./Hero/Hero";
 import Characters from "./Characters/Characters";
+import Reviews from "./Reviews/Reviews";
 
 class Manga extends Component {
   state = {
@@ -133,6 +134,9 @@ class Manga extends Component {
         )}
         {this.state.characters.length > 2 ? (
           <Characters characters={this.state.characters} />
+        ) : null}
+        {this.state.reviews.length > 2 ? (
+          <Reviews reviews={this.state.reviews} />
         ) : null}
       </div>
     );

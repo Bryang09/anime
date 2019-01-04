@@ -1,0 +1,95 @@
+.ReviewContainer {
+  min-height: 80vh;
+  background: #333;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    margin-top: 10vh;
+    color: #fff;
+    font-weight: 300;
+    font-size: 2em;
+    text-align: center;
+  }
+  .reviews {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .review {
+      width: 75vw;
+      border: 1px solid #fff;
+      margin: 1vh 0.5%;
+      display: flex;
+      height: 30vh;
+
+      .imgContainer {
+        height: 100%;
+        background: #3885e4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .img {
+          height: 30vh;
+          width: 10vw;
+          background-size: cover;
+          background-position: center;
+          // border-radius: 50%;
+        }
+      }
+
+      .text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h4 {
+          width: 90%;
+          margin: 1vh auto;
+          color: #fff;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+.reviewScores {
+  display: flex;
+  width: 100%;
+  margin-top: 2vh;
+  flex-direction: column;
+  width: 10vw;
+
+  h6 {
+    font-size: 0.8em;
+    margin: 1vh 2.5%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: 300;
+
+    img {
+      height: 20px;
+      margin-right: 1vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1192px) {
+  .ReviewContainer .reviews .review {
+    width: 85vw;
+
+    .imgContainer .img {
+      width: 15vw;
+    }
+    .text h4 {
+      width: 75%;
+    }
+  }
+  .reviewScores {
+    width: 15vw;
+  }
+}
