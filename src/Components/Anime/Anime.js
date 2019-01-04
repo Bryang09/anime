@@ -129,7 +129,7 @@ class Anime extends Component {
         )}
 
         {this.state.staff.length > 2 ? (
-          <Characters characters={this.state.staff} />
+          <Characters characters={this.state.staff} props={this.props.match} />
         ) : null}
         {this.state.pictures.length > 2 ? (
           <Episodes

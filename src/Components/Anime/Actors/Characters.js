@@ -2,9 +2,19 @@ import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
 
+import VoiceActors from "./VoiceActors/VoiceActors";
+
 import "./Characters.scss";
 
 class Characters extends Component {
+  state = {
+    characters: false
+  };
+
+  onSelected = () => {
+    this.setState({ characters: !this.state.characters });
+  };
+
   render() {
     console.log(this.props);
     const sortCharacters = this.props.characters.map((res, i) => {
@@ -13,20 +23,58 @@ class Characters extends Component {
           <div
             className="img"
             style={{ backgroundImage: `url(${res.image_url})` }}
-          />
+          >
+            <h5
+              style={
+                res.role === "Main"
+                  ? { background: "#11ad2b" }
+                  : { background: "#4484d4" }
+              }
+            >
+              {res.role}
+            </h5>
+          </div>
           <div className="text">
-            <h4>{res.name}</h4>
+            <h4>
+              <Link
+                to={{
+                  pathname: `/anime/${this.props.props.params.id}/${
+                    res.mal_id
+                  }`,
+                  state: { props: this.props.characters }
+                }}
+              >
+                {res.name}
+              </Link>
+            </h4>
           </div>
         </div>
       );
     });
 
+    console.log(this.props.characters);
+
     return (
-      <div className="CharactersSection">
-        <h3>Voice Actors</h3>
-        <div className="Characters">{sortCharacters}</div>
-        <div className="voiceActors">
-          <h4>Voice Actors</h4>
+      <div
+        className="CharactersSection"
+        style={
+          this.state.characters
+            ? { background: "#48dab8ed" }
+            : { background: "#333" }
+        }
+      >
+        <h4 id="btn" onClick={this.onSelected}>
+          Search Voice Actors
+        </h4>
+        <h3 style={{ display: "none" }}>Voice Actors</h3>
+
+        <div
+          className="Characters"
+          style={
+            this.state.characters ? { display: "flex" } : { display: "none" }
+          }
+        >
+          {sortCharacters}
         </div>
       </div>
     );

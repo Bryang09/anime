@@ -1,36 +1,87 @@
 .CharactersSection {
   height: 100%;
+  background: #48dab8ed;
+  transition: 1s ease;
 
   h3 {
     font-size: 2em;
     text-align: center;
     margin-bottom: 0.5vh;
+    margin: 0 0 0.5vh;
+    padding-top: 5vh;
+    color: #333;
   }
   .Characters {
     display: flex;
-    height: 90%;
     flex-wrap: wrap;
     height: 100%;
-    .character {
-      width: 10vw;
-      margin: 1vw;
-      background: red;
+    padding-bottom: 2vh;
+    width: 90vw;
+    margin: 0 auto;
+    transition: 1s ease;
 
-      height: 20vh;
+    .character {
+      width: 15vw;
+      margin: 1vh 1vw;
+
+      height: 25vh;
 
       .img {
         width: 100%;
-        height: 100%;
+        height: 90%;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        h5 {
+          margin: 0;
+          color: #fff;
+          font-weight: 300;
+          border-radius: 5px;
+          margin-bottom: 1px;
+          margin-right: 2px;
+          padding: 1px 2px;
+        }
+      }
+
+      .text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h4 {
+          margin-top: 1vh;
+          a {
+            color: #000;
+            transition: 1s ease;
+
+            &:hover {
+              color: #fb7ea1;
+            }
+          }
+        }
       }
     }
   }
 }
 
-.voiceActors {
-  height: 30vh;
-  background: green;
+#btn {
+  border: 1px solid #fff;
+  width: 15vw;
+  margin: 0 auto 2vh;
+  padding: 1vh 2vw;
+  font-size: 1.2em;
+  text-align: center;
+  transform: translateY(2vh);
+  color: #fff;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 1s ease;
+
+  &:hover {
+    background: #fb7ea1;
+    border: 1px solid #fb7ea1;
+  }
 }
