@@ -86,14 +86,24 @@
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1192px) {
   #btn {
-    width: 25vw;
+    width: 40vw;
+  }
+
+  .CharactersSection .Characters .character {
+    width: 20vw;
   }
 }
 
 @media screen and (max-width: 768px) {
   #btn {
     width: 50vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .CharactersSection .Characters .character {
+    height: 30vh;
+    width: 40vw;
   }
 }
