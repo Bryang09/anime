@@ -85,3 +85,15 @@
     border: 1px solid #fb7ea1;
   }
 }
+
+@media screen and (max-width: 991px) {
+  #btn {
+    width: 25vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #btn {
+    width: 50vw;
+  }
+}

@@ -16,6 +16,8 @@ const Reviews = props => {
               className="img"
               style={{ backgroundImage: `url(${res.reviewer.image_url})` }}
             />
+          </div>
+          <div className="text">
             <div className="reviewScores">
               <h6>
                 <img
@@ -46,9 +48,9 @@ const Reviews = props => {
                 Story: {res.reviewer.scores.story}
               </h6>
             </div>
-          </div>
-          <div className="text">
-            <h4>{res.content.substring(0, 700)}..</h4>
+            <div className="reviewText">
+              <h4>{res.content.substring(0, 700)}..</h4>
+            </div>
           </div>
         </div>
       );

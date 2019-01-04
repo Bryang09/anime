@@ -27,7 +27,6 @@
 
       .imgContainer {
         height: 100%;
-        background: #3885e4;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -43,37 +42,41 @@
 
       .text {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        h4 {
-          width: 90%;
-          margin: 1vh auto;
-          color: #fff;
-          font-weight: 300;
+        flex-direction: column;
+        .reviewText {
+          h4 {
+            width: 95%;
+            margin: 1vh auto;
+            color: #fff;
+            font-weight: 300;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        .reviewScores {
+          display: flex;
+          width: 100%;
+          background: #3885e4;
+          height: 30%;
+          justify-content: center;
+
+          h6 {
+            font-size: 0.8em;
+            margin: 1vh 2.5%;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-weight: 300;
+
+            img {
+              height: 20px;
+              margin-right: 1vw;
+            }
+          }
         }
       }
-    }
-  }
-}
-
-.reviewScores {
-  display: flex;
-  width: 100%;
-  margin-top: 2vh;
-  flex-direction: column;
-  width: 10vw;
-
-  h6 {
-    font-size: 0.8em;
-    margin: 1vh 2.5%;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    font-weight: 300;
-
-    img {
-      height: 20px;
-      margin-right: 1vw;
     }
   }
 }
@@ -86,10 +89,61 @@
       width: 15vw;
     }
     .text h4 {
-      width: 75%;
+      width: 85%;
     }
   }
   .reviewScores {
     width: 15vw;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .ReviewContainer .reviews .review .text {
+    .reviewScores {
+      height: 20%;
+    }
+    .reviewText {
+      height: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ReviewContainer .reviews {
+    width: 90vw;
+    // #FFB600
+    .review {
+      width: 90vw;
+      height: 50vh;
+      flex-direction: column;
+      background: linear-gradient(#009ad3, #182d5c);
+
+      .imgContainer {
+        height: auto;
+        margin: 1.5vh auto;
+
+        .img {
+          height: 10vh;
+        }
+      }
+
+      .text {
+        .reviewText {
+          transform: translateY(5vh);
+        }
+        .reviewScores {
+          background: #ffb600;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ReviewContainer .reviews .review {
+    height: 60vh;
   }
 }
