@@ -8,13 +8,11 @@ import Characters from "./Characters/Characters";
 
 class Manga extends Component {
   state = {
+    // HERO
     reading: null,
     planRead: null,
     completed: null,
     pictures: [],
-    reviews: [],
-    recommendations: [],
-
     title: "",
     chapters: "",
     volumes: "",
@@ -23,6 +21,10 @@ class Manga extends Component {
     rank: "",
     fans: "",
     synopsis: "",
+
+    reviews: [],
+    recommendations: [],
+
     characters: [],
     page2: false,
     page1: true
@@ -129,11 +131,8 @@ class Manga extends Component {
             pic={undefined}
           />
         )}
-        {this.state.staff.length > 2 ? (
-          <Characters
-            characters={this.state.chapters}
-            props={this.props.match}
-          />
+        {this.state.characters.length > 2 ? (
+          <Characters characters={this.state.characters} />
         ) : null}
       </div>
     );
