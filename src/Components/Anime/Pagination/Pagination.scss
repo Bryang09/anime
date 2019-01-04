@@ -1,0 +1,45 @@
+$color: #fb7ea1;
+.Pagination {
+  background: #333;
+  padding: 5vh auto;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  h5 {
+    margin: 0;
+    width: 50%;
+    text-align: center;
+    // border-radius: 5px;
+  }
+
+  #two {
+    border: none;
+  }
+
+  .options {
+    display: flex;
+    // background: red;
+    width: 5vw;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 1px solid $color;
+
+    h5 {
+      color: #fff;
+      font-weight: 300;
+      cursor: pointer;
+
+      &:hover {
+        background: $color;
+      }
+    }
+    .bg {
+      background: $color;
+    }
+    .normal {
+      background: #333;
+    }
+  }
+}

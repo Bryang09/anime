@@ -4,6 +4,7 @@ import axios from "axios";
 import Hero from "./Hero/Hero";
 import Episodes from "./Episodes/Episodes";
 import Characters from "./Actors/Characters";
+import Pagination from "./Pagination/Pagination";
 
 import "./Anime.scss";
 
@@ -23,7 +24,9 @@ class Anime extends Component {
     rank: "",
     fans: "",
     synopsis: "",
-    staff: []
+    staff: [],
+    page2: false,
+    page1: true
   };
 
   componentDidMount = () => {
@@ -67,7 +70,7 @@ class Anime extends Component {
       )
       .catch(err => console.log(err));
     axios
-      .get(`${Request}/anime/${id}/episodes`)
+      .get(`${Request}/anime/${id}/episodes/1`)
       .then(res =>
         this.setState({
           episodes1: res.data.episodes
@@ -82,6 +85,13 @@ class Anime extends Component {
         })
       )
       .catch(err => console.log(err));
+  };
+
+  onPage2 = () => {
+    this.setState({ page2: true, page1: false });
+  };
+  onPage1 = () => {
+    this.setState({ page1: true, page2: false });
   };
 
   render() {
@@ -135,9 +145,32 @@ class Anime extends Component {
           <Episodes
             episodes1={this.state.episodes1}
             pic={this.state.pictures}
+            episodes2={this.state.episodes2}
+            page1={this.state.page1}
+            page2={this.state.page2}
           />
         ) : (
-          <Episodes episodes1={this.state.episodes1} pic={undefined} />
+          <Episodes
+            episodes1={this.state.episodes1}
+            pic={undefined}
+            episodes2={this.state.episodes2}
+          />
+        )}
+
+        {this.state.episodes2.length > 2 ? (
+          <Pagination
+            page1={this.state.page1}
+            page2={this.state.page2}
+            onPage1={this.onPage1}
+            onPage2={this.onPage2}
+          />
+        ) : (
+          <Pagination
+            page1={this.state.page1}
+            page2={this.state.page2}
+            onPage1={this.onPage1}
+            onPage2={this.onPage2}
+          />
         )}
       </div>
     );
