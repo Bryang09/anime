@@ -5,7 +5,6 @@ import Information from "../Information/Information";
 const Hero = props => {
   const trailer = props.trailer;
   const info = props.info;
-  console.log(props);
   return (
     <div className="Stats">
       <a href={trailer} id="trailer" target="_blank" rel="noopener noreferrer">

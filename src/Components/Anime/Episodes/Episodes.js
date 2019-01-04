@@ -6,8 +6,8 @@ import "./Episodes.scss";
 const Episodes = props => {
   const episodes = props.episodes1.map(res => {
     return (
-      <Zoom>
-        <div className="episode" key={res.episode_id}>
+      <Zoom key={res.episode_id}>
+        <div className="episode">
           <div className="imageContainer">
             <div
               className="img"

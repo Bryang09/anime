@@ -3,6 +3,7 @@ import { Request } from "../../Request";
 import axios from "axios";
 import Hero from "./Hero/Hero";
 import Episodes from "./Episodes/Episodes";
+import Characters from "./Actors/Characters";
 
 import "./Anime.scss";
 
@@ -21,7 +22,8 @@ class Anime extends Component {
     rating: "",
     rank: "",
     fans: "",
-    synopsis: ""
+    synopsis: "",
+    staff: []
   };
 
   componentDidMount = () => {
@@ -50,6 +52,10 @@ class Anime extends Component {
           watching: res.data.watching
         })
       )
+      .catch(err => console.log(err));
+    axios
+      .get(`${Request}/anime/${id}/characters_staff`)
+      .then(res => this.setState({ staff: res.data.characters }))
       .catch(err => console.log(err));
 
     axios
@@ -80,7 +86,6 @@ class Anime extends Component {
 
   render() {
     const state = this.state;
-    console.log(this.props);
 
     const information = [
       // prettier-ignore
@@ -103,8 +108,6 @@ class Anime extends Component {
       {id: 6, icon: 'https://img.icons8.com/ios/50/fb7ea1/leaderboard-filled.png', text: state.rank, label: 'Rank'}
     ];
 
-    console.log(this.state);
-
     return (
       <div className="Anime Container">
         {this.state.pictures.length > 2 ? (
@@ -124,6 +127,10 @@ class Anime extends Component {
             pic={undefined}
           />
         )}
+
+        {this.state.staff.length > 2 ? (
+          <Characters characters={this.state.staff} />
+        ) : null}
         {this.state.pictures.length > 2 ? (
           <Episodes
             episodes1={this.state.episodes1}
