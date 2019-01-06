@@ -3,7 +3,6 @@ import React from "react";
 import "./NavBtn.scss";
 
 const NavBtn = props => {
-  console.log(props);
   return (
     <div
       className="NavBtn"

@@ -22,7 +22,6 @@ const Recommended = props => {
       );
     });
 
-  console.log(props.recommended);
   return (
     <div className="Recommended">
       <h1>Recommended</h1>

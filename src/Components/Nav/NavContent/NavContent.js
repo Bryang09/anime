@@ -17,12 +17,10 @@ class NavContent extends Component {
 
   onSelected = e => {
     this.setState({ animeDrop: !this.state.animeDrop });
-    console.log(e.target.value);
     this.setState({ text: e.target.value });
   };
 
   render() {
-    console.log(this.props);
     return (
       <div
         className="NavContent"
