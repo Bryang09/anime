@@ -3,7 +3,6 @@ import React from "react";
 import "./Pagination.scss";
 
 const Pagination = props => {
-  console.log(props);
   return (
     <div className="Pagination">
       <div className="options">

@@ -60,8 +60,6 @@ class VoiceActors extends Component {
         })
       );
 
-    console.log(this.props);
-    console.log(this.state.characters);
     return (
       <div className="voiceActors">
         <div className="characterPage">{actorsHero}</div>

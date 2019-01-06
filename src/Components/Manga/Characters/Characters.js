@@ -12,7 +12,6 @@ class Characters extends Component {
   };
 
   render() {
-    console.log(this.props);
     const sortCharacters = this.props.characters.map((res, i) => {
       return (
         <div className="character" key={i}>
@@ -37,8 +36,6 @@ class Characters extends Component {
       );
     });
 
-    console.log(this.props.characters);
-
     return (
       <div
         className="CharactersSection"
@@ -49,9 +46,9 @@ class Characters extends Component {
         }
       >
         <h4 id="btn" onClick={this.onSelected}>
-          Search Voice Actors
+          Search Characters
         </h4>
-        <h3 style={{ display: "none" }}>Voice Actors</h3>
+        <h3 style={{ display: "none" }}>Characters</h3>
 
         <div
           className="Characters"

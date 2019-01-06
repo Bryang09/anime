@@ -6,6 +6,7 @@ import { Request } from "../../Request";
 import Hero from "./Hero/Hero";
 import Characters from "./Characters/Characters";
 import Reviews from "./Reviews/Reviews";
+import Recommended from "./Recommended/Recommended";
 
 class Manga extends Component {
   state = {
@@ -112,9 +113,8 @@ class Manga extends Component {
       {id: 6, icon: 'https://img.icons8.com/ios/50/fb7ea1/leaderboard-filled.png', text: state.rank, label: 'Rank'}
     ];
 
-    console.log(this.state);
     return (
-      <div className="Manga">
+      <div className="Manga" style={{ overflowX: "hidden" }}>
         {this.state.pictures.length > 2 ? (
           <Hero
             info={information}
@@ -137,6 +137,9 @@ class Manga extends Component {
         ) : null}
         {this.state.reviews.length > 2 ? (
           <Reviews reviews={this.state.reviews} />
+        ) : null}
+        {this.state.recommendations.length > 2 ? (
+          <Recommended recommended={this.state.recommendations} />
         ) : null}
       </div>
     );

@@ -4,7 +4,6 @@ import "./Reviews.scss";
 
 const Reviews = props => {
   const reviews = props.reviews;
-  console.log(reviews);
 
   const theReviews = reviews
     .filter((res, i) => i < 3)

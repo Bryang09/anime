@@ -16,7 +16,6 @@ class Characters extends Component {
   };
 
   render() {
-    console.log(this.props);
     const sortCharacters = this.props.characters.map((res, i) => {
       return (
         <div className="character" key={i}>
@@ -51,8 +50,6 @@ class Characters extends Component {
         </div>
       );
     });
-
-    console.log(this.props.characters);
 
     return (
       <div
