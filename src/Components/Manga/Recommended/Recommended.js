@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import "./Recommended.scss";
 
 const Recommended = props => {
@@ -12,11 +14,11 @@ const Recommended = props => {
             className="img"
             style={{ backgroundImage: `url(${res.image_url})` }}
           >
-            <a href={res.url} target="_blank">
+            <Link to={`/manga/${res.mal_id}`}>
               <div className="text">
                 <h3>{res.title}</h3>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       );

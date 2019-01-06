@@ -9,6 +9,11 @@
   background: #fb7ea1;
   overflow-x: hidden;
   animation: nav 1s ease;
+  background-size: cover;
+
+  a {
+    color: #fff;
+  }
 
   h2 {
     color: #fff;

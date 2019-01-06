@@ -26,7 +26,9 @@ class NavContent extends Component {
         className="NavContent"
         style={this.props.width ? { display: "flex" } : { display: "none" }}
       >
-        <h2>Bryan's Anime Listings</h2>
+        <h2>
+          <Link to="/">Bryan's Anime Listings</Link>
+        </h2>
         <div className="Navigation">
           <div className="search">
             {/* <h4 onClick={this.onAnime}>Search By Anime</h4> */}

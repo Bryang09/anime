@@ -7,6 +7,7 @@ const NavBtn = props => {
     <div
       className="NavBtn"
       onClick={props.onWidth}
+
       // style={
       //   props.width
       //     ? {

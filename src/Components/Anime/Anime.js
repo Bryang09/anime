@@ -5,6 +5,7 @@ import Hero from "./Hero/Hero";
 import Episodes from "./Episodes/Episodes";
 import Characters from "./Actors/Characters";
 import Pagination from "./Pagination/Pagination";
+import Nav from "../Nav/Nav";
 
 import "./Anime.scss";
 
@@ -120,6 +121,7 @@ class Anime extends Component {
 
     return (
       <div className="Anime Container">
+        <Nav />
         {this.state.pictures.length > 2 ? (
           <Hero
             info={information}

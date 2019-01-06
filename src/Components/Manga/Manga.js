@@ -7,6 +7,7 @@ import Hero from "./Hero/Hero";
 import Characters from "./Characters/Characters";
 import Reviews from "./Reviews/Reviews";
 import Recommended from "./Recommended/Recommended";
+import Nav from "../Nav/Nav";
 
 class Manga extends Component {
   state = {
@@ -115,6 +116,7 @@ class Manga extends Component {
 
     return (
       <div className="Manga" style={{ overflowX: "hidden" }}>
+        <Nav />
         {this.state.pictures.length > 2 ? (
           <Hero
             info={information}
