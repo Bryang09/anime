@@ -5,6 +5,7 @@ import Top from "./Listings/Anime/AnimeTop/Top";
 import UpcomingAnime from "./Listings/Anime/AnimeUpcoming/Upcoming";
 import TopManga from "./Listings/Manga/MangaTop/Top";
 import UpcomingManga from "./Listings/Manga/MangaUpcoming/Upcoming";
+import Nav from "../Nav/Nav";
 
 class Landing extends Component {
   state = {
@@ -18,6 +19,7 @@ class Landing extends Component {
   render() {
     return (
       <div style={{ background: "#333" }}>
+        <Nav />
         <Hero cover={this.state.cover} toggle={this.onCover} />
         <Top cover={this.state.cover} />
         <UpcomingAnime cover={this.state.cover} />
