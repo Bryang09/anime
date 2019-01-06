@@ -17,14 +17,13 @@ class Anime extends Component {
     const query = this.props.match.params.query;
 
     axios
-      .get(`https://api.jikan.moe/v3/search/anime?q=${query}&page=1`)
+      .get(`${Request}/search/anime?q=${query}&page=1`)
       .then(res => this.setState({ results: res.data.results }))
       .catch(err => console.log(err));
   };
 
   render() {
     const query = this.props.match.params.query;
-    console.log(this.state.results);
 
     const results = this.state.results.map(res => {
       return (
@@ -67,7 +66,15 @@ class Anime extends Component {
         <Nav />
         <h1>
           Searching For{" "}
-          <span style={{ textTransform: "capitalize" }}>{query}</span>
+          <span
+            style={{
+              textTransform: "capitalize",
+              fontWeight: 400,
+              color: "#00fffe"
+            }}
+          >
+            {query}
+          </span>
         </h1>
         {results}
       </div>

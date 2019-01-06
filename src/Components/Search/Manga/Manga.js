@@ -16,7 +16,7 @@ class Anime extends Component {
     const query = this.props.match.params.query;
 
     axios
-      .get(`https://api.jikan.moe/v3/search/manga?q=${query}&page=1`)
+      .get(`${Request}/search/manga?q=${query}&page=1`)
       .then(res => this.setState({ results: res.data.results }))
       .catch(err => console.log(err));
   };
@@ -27,7 +27,6 @@ class Anime extends Component {
 
   render() {
     const query = this.props.match.params.query;
-    console.log(this.state.results);
 
     const results = this.state.results.map(res => {
       return (
@@ -37,7 +36,21 @@ class Anime extends Component {
               className="img"
               style={{ backgroundImage: `url(${res.image_url})` }}
             >
-              <h5>{res.type}</h5>
+              <h5
+                style={
+                  res.type === "Manga"
+                    ? { background: "#00c534", border: "1px solid #00c534" }
+                    : res.type === "One-shot"
+                    ? { background: "#2a80ec", border: "1px solid #2a80ec" }
+                    : res.type === "Novel"
+                    ? { background: "#fb4444", border: "1px solid #fb4444" }
+                    : res.type === "Doujinshi"
+                    ? { background: "#e459e6", border: "1px solid #e459e6" }
+                    : null
+                }
+              >
+                {res.type}
+              </h5>
             </div>
           </Link>
           <div className="text">
@@ -56,7 +69,15 @@ class Anime extends Component {
         <Nav nav={this.state.nav} onNav={this.onNav} />
         <h1>
           Searching For{" "}
-          <span style={{ textTransform: "capitalize" }}>{query}</span>
+          <span
+            style={{
+              textTransform: "capitalize",
+              fontWeight: 400,
+              color: "#00fffe"
+            }}
+          >
+            {query}
+          </span>
         </h1>
         {results}
       </div>

@@ -13,7 +13,6 @@ const Recommended = props => {
             style={{ backgroundImage: `url(${res.image_url})` }}
           >
             <a href={res.url} target="_blank" rel="noopener noreferrer">
-              {" "}
               <div className="text">
                 <h3>{res.title}</h3>
               </div>

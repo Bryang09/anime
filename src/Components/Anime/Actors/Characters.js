@@ -2,8 +2,6 @@ import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
 
-import VoiceActors from "./VoiceActors/VoiceActors";
-
 import "./Characters.scss";
 
 class Characters extends Component {

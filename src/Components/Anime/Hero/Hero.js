@@ -24,7 +24,16 @@ const Hero = props => {
 
       <div className="text">
         <h1>{props.title}</h1>
-        <p>{props.synopsis.substring(0, 280)} ...</p>
+        <p>
+          {props.synopsis === null
+            ? "Not Available"
+            : props.synopsis.length > 2
+            ? props.synopsis.substring(0, 280)
+            : props.synopsis === null
+            ? "Not Available"
+            : null}{" "}
+          ...
+        </p>
         <Information info={info} />
       </div>
     </div>

@@ -6,6 +6,7 @@ import Episodes from "./Episodes/Episodes";
 import Characters from "./Actors/Characters";
 import Pagination from "./Pagination/Pagination";
 import Nav from "../Nav/Nav";
+import Recommended from "./Recommended/Recommended";
 
 import "./Anime.scss";
 
@@ -27,7 +28,8 @@ class Anime extends Component {
     synopsis: "",
     staff: [],
     page2: false,
-    page1: true
+    page1: true,
+    recommendations: []
   };
 
   componentDidMount = () => {
@@ -86,6 +88,26 @@ class Anime extends Component {
         })
       )
       .catch(err => console.log(err));
+    axios
+      .get(`${Request}/anime/${id}/recommendations`)
+      .then(res =>
+        this.setState({
+          recommendations: res.data.recommendations
+        })
+      )
+      .catch(err => console.log(err));
+  };
+
+  componentDidUpdate = () => {
+    const id = this.props.match.params.id;
+    axios
+      .get(`${Request}/anime/${id}/recommendations`)
+      .then(res =>
+        this.setState({
+          recommendations: res.data.recommendations
+        })
+      )
+      .catch(err => console.log(err));
   };
 
   onPage2 = () => {
@@ -118,7 +140,6 @@ class Anime extends Component {
       // prettier-ignore
       {id: 6, icon: 'https://img.icons8.com/ios/50/fb7ea1/leaderboard-filled.png', text: state.rank, label: 'Rank'}
     ];
-
     return (
       <div className="Anime Container">
         <Nav />
@@ -174,6 +195,10 @@ class Anime extends Component {
             onPage2={this.onPage2}
           />
         )}
+
+        {this.state.recommendations.length > 2 ? (
+          <Recommended recommended={this.state.recommendations} />
+        ) : null}
       </div>
     );
   }
