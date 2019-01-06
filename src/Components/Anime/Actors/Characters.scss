@@ -2,6 +2,7 @@
   height: 100%;
   background: #48dab8ed;
   transition: 1s ease;
+  overflow: hidden;
 
   h3 {
     font-size: 2em;
@@ -23,7 +24,7 @@
     .character {
       width: 15vw;
       margin: 1vh 1vw;
-
+      overflow: hidden;
       height: 25vh;
 
       .img {
@@ -103,7 +104,11 @@
 }
 @media screen and (max-width: 600px) {
   .CharactersSection .Characters .character {
-    height: 30vh;
+    height: 40vh;
     width: 40vw;
+  }
+
+  #btn {
+    width: 60vw;
   }
 }

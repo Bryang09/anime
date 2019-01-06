@@ -30,12 +30,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
 
         .img {
           height: 30vh;
           width: 10vw;
           background-size: cover;
           background-position: center;
+          overflow: hidden;
+
           // border-radius: 50%;
         }
       }
@@ -43,6 +46,8 @@
       .text {
         display: flex;
         flex-direction: column;
+        overflow: hidden;
+
         .reviewText {
           h4 {
             width: 95%;
@@ -52,7 +57,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
           }
+          overflow: hidden;
         }
 
         .reviewScores {
@@ -61,6 +68,7 @@
           background: #3885e4;
           height: 30%;
           justify-content: center;
+          overflow: hidden;
 
           h6 {
             font-size: 0.8em;
@@ -69,10 +77,12 @@
             align-items: center;
             color: #fff;
             font-weight: 300;
+            overflow: hidden;
 
             img {
               height: 20px;
               margin-right: 1vw;
+              overflow: hidden;
             }
           }
         }

@@ -13,12 +13,13 @@
 }
 
 .episode {
-  width: 60vw;
+  width: 80vw;
   display: flex;
   border-bottom: 1px solid #000;
   height: 20vh;
   align-items: center;
   margin: 1vh auto;
+  overflow: hidden;
 
   .imageContainer {
     width: 33%;
@@ -36,6 +37,7 @@
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+    overflow: hidden;
 
     .title,
     .forum {
@@ -49,17 +51,21 @@
       align-items: center;
     }
 
-    h5 a {
-      color: #fff;
-      font-weight: 300;
-      border: 1px solid #fff;
-      padding: 1vh 2vw;
-      border-radius: 10px;
-      transition: 1s ease;
+    h5 {
+      overflow: hidden;
+      a {
+        color: #fff;
+        font-weight: 300;
+        border: 1px solid #fff;
+        padding: 1vh 2vw;
+        border-radius: 10px;
+        transition: 1s ease;
+        overflow: hidden;
 
-      &:hover {
-        background: #fb7ea1;
-        border: 1px solid #fb7ea1;
+        &:hover {
+          background: #fb7ea1;
+          border: 1px solid #fb7ea1;
+        }
       }
     }
     h3 a {

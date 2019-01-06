@@ -100,3 +100,19 @@ select {
     width: 90%;
   }
 }
+@media screen and (max-width: 600px) {
+  .NavContent h2 {
+    font-size: 2em;
+    width: 90%;
+  }
+
+  .search {
+    width: 80vw;
+    margin: 0 auto;
+    flex-direction: column-reverse;
+  }
+
+  form input {
+    margin: 2vh auto;
+  }
+}

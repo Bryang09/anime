@@ -115,7 +115,7 @@ class Manga extends Component {
     ];
 
     return (
-      <div className="Manga" style={{ overflowX: "hidden" }}>
+      <div className="Manga" style={{ overflowY: "auto" }}>
         <Nav />
         {this.state.pictures.length > 2 ? (
           <Hero

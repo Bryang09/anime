@@ -43,3 +43,14 @@ $color: #fb7ea1;
     }
   }
 }
+
+@media screen and (max-width: 1192px) {
+  .Pagination .options {
+    width: 30vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Pagination .options {
+    width: 40vw;
+  }
+}
