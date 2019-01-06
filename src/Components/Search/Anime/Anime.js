@@ -52,7 +52,7 @@ class Anime extends Component {
           </Link>
           <div className="text">
             <div className="title">
-              <h3>{res.title}</h3>
+              <h3>{res.title.substring(0, 150)}</h3>
             </div>
             <div className="title episodes">
               <h3>Episodes: {res.episodes}</h3>

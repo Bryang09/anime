@@ -57,6 +57,9 @@
         font-size: 1.3em;
       }
     }
+    .episodes {
+      width: 40%;
+    }
   }
 
   &:nth-child(even) {
@@ -64,5 +67,44 @@
   }
   &:nth-child(odd) {
     background: #00adff;
+  }
+}
+
+@media screen and (max-width: 778px) {
+  .singleResult {
+    width: 90vw;
+    height: 15vh;
+
+    .text {
+      .episodes {
+        width: 30%;
+      }
+      .title h3 {
+        font-size: 1em;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .singleResult {
+    height: 18vh;
+    .text {
+      flex-direction: column;
+      width: 80%;
+      .episodes {
+        width: 30%;
+      }
+      .title {
+        width: 100%;
+      }
+      h3 {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .Anime h1 {
+    font-size: 1.5em;
+    padding-top: 7vh;
   }
 }
